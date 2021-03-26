@@ -1,9 +1,12 @@
 <div class="container">
     <h2>User Settings</h2>
-    <form #f="ngForm">
+
+    <form #f="ngForm" ngNativeValidate>
         <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Name" class="form-control" [(ngModel)]="userSettings.name"/>
+            <input type="text" id="name" name="name" class="form-control" required 
+            #nameField="ngModel" [(ngModel)]="userSettings.name"/>
+            <div class="alert alert-danger" [hidden]="nameField.valid || nameField.untouched">Enter a name</div>
         </div>
         <div class="form-check form-group">
             <input type="checkbox" class="form-check-input" id="emailOffers" name="emailOffers" [(ngModel)]="userSettings.emailOffers"/>
@@ -43,4 +46,3 @@
         <button class="btn btn-primary">Send</button>
     </form>
 </div>
-<h5>{{ userSettings | json }}</h5>
