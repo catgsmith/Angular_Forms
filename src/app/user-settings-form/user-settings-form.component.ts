@@ -17,6 +17,8 @@ export class UserSettingsFormComponent implements OnInit {
     subscriptionType: 'Annual',
     notes: 'here are some notes...'
   };
+
+  startDate = new Date();
   userSettings: UserSettings = { ...this.originalUserSettings };
   postError = false;
   postErrorMessage = '';
