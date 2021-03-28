@@ -24,6 +24,9 @@ export class UserSettingsFormComponent implements OnInit {
   postErrorMessage = '';
   subscriptionTypes: Observable<string[]>;
   singleModel = 'On';
+  userRating = 0;
+  maxRating = 10;
+  isReadonly = false;
 
   constructor(private dataService: DataService) { }
 
